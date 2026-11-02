@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "banking-analyzer"
+version = "0.1.0"
+description = "Приложение для анализа банковских операций"
+authors = ["Student"]
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.0"
+xlrd = "^2.0"       # <-- Было openpyxl, стало xlrd (для .xls)
+requests = "^2.31"
+python-dotenv = "^1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
